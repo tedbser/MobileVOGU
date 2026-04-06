@@ -26,13 +26,4 @@ class SearchResults {
     }
     throw FormatException('Could not deserialize SearchResults, json=$json');
   }
-
-  @override
-  String toString() {
-    final StringBuffer buffer = StringBuffer();
-    for (final SearchResult result in results) {
-      buffer.write('${result.url}\n');
-    }
-    return '\nSearchResults for $searchTerm:\n$buffer';
-  }
 }

@@ -19,14 +19,4 @@
     }
     throw FormatException('Could not deserialize Article, json=$json');
   }
-
-  Map<String, Object?> toJson() => <String, Object?>{
-    'title': title,
-    'extract': extract,
-  };
-
-  @override
-  String toString() {
-    return 'Article{title: $title, extract: $extract}';
-  }
 }
