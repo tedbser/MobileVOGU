@@ -8,19 +8,18 @@ void main(List<String> arguments) {
     print('Dartpedia CLI version $version');
   }
   else if (arguments.first == 'search') {
-    print('Команда search распознана!');
+    final inputArgs = arguments.length > 1 ? arguments.sublist(1) : null;
+    searchWikipedia(inputArgs);
   }
   else {
     printUsage();
   }
 }
-
 void searchWikipedia(List<String>? arguments) {
   print('searchWikipedia получила аргументы: $arguments');
 }
-
 void printUsage() {
   print(
-    "Доступные команды: 'help', 'version', 'search <Название статьи>'"
+    "Доступные команды: 'help', 'version', 'search <Название_статьи>'"
   );
 }
