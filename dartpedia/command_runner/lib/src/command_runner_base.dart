@@ -1,9 +1,14 @@
+import 'dart:async';
 import 'dart:collection';
 import 'dart:io';
 import 'arguments.dart';
+import 'exceptions.dart';
 
 class CommandRunner {
+  CommandRunner({this.onError});
+
   final Map<String, Command> _commands = <String, Command>{};
+  FutureOr<void> Function(Object)? onError;
 
   UnmodifiableSetView<Command> get commands =>
       UnmodifiableSetView<Command>(<Command>{..._commands.values});
