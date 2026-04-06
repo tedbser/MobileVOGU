@@ -21,7 +21,12 @@ void searchWikipedia(List<String>? arguments) async {
 
   if (arguments == null || arguments.isEmpty) {
     print('Пожалуйста, введите название статьи.');
-    articleTitle = stdin.readLineSync() ?? '';
+    final inputFromStdin = stdin.readLineSync();
+    if (inputFromStdin == null || inputFromStdin.isEmpty) {
+      print('Название статьи не введено. Выход.');
+      return;
+    }
+    articleTitle = inputFromStdin;
   } else {
     articleTitle = arguments.join(' ');
   }
