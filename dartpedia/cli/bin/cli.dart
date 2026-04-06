@@ -53,6 +53,6 @@ Future<String> getWikipediaArticle(String articleTitle) async {
 
 void printUsage() {
   print(
-    "Доступные команды: 'help', 'version', 'search <НАЗВАНИЕ_СТАТЬИ>'"
+    "Доступные команды: 'help', 'version', 'wikipedia <НАЗВАНИЕ_СТАТЬИ>'"
   );
 }
