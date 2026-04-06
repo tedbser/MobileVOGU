@@ -32,8 +32,9 @@ void searchWikipedia(List<String>? arguments) async {
   }
 
   print('Ищем статьи о "$articleTitle". Пожалуйста, подождите.');
-  print('Вот что нашлось:');
-  print('(Представьте, что это настоящая статья о "$articleTitle")');
+
+  final articleContent = await getWikipediaArticle(articleTitle);
+  print(articleContent);
 }
 
 Future<String> getWikipediaArticle(String articleTitle) async {
