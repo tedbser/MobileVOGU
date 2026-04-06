@@ -30,8 +30,23 @@ void searchWikipedia(List<String>? arguments) {
   print('Вот что нашлось:');
   print('(Представьте, что это настоящая статья о "$articleTitle")');
 }
+
+Future<String> getWikipediaArticle(String articleTitle) async {
+  final url = Uri.https(
+    'en.wikipedia.org',
+    '/api/rest_v1/page/summary/$articleTitle',
+  );
+  final response = await http.get(url);
+
+  if (response.statusCode == 200) {
+    return response.body;
+  }
+
+  return 'Ошибка: Не удалось загрузить статью "$articleTitle". Код статуса: ${response.statusCode}';
+}
+
 void printUsage() {
   print(
-    "Доступные команды: 'help', 'version', 'search <Название_Статьи>'"
+    "Доступные команды: 'help', 'version', 'search <НАЗВАНИЕ_СТАТЬИ>'"
   );
 }
