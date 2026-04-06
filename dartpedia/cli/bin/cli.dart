@@ -1,3 +1,5 @@
+import 'dart:io'; 
+
 const version = '0.0.1';
 
 void main(List<String> arguments) {
@@ -20,6 +22,6 @@ void searchWikipedia(List<String>? arguments) {
 }
 void printUsage() {
   print(
-    "Доступные команды: 'help', 'version', 'search <Название_статьи>'"
+    "Доступные команды: 'help', 'version', 'search <Название_Статьи>'"
   );
 }
