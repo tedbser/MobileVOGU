@@ -1,5 +1,9 @@
-import 'dart:io';  
+// bin/cli.dart
+
+import 'dart:io'; 
+
 const version = '0.0.1';
+
 void main(List<String> arguments) {
   if (arguments.isEmpty || arguments.first == 'help') {
     printUsage();
@@ -11,19 +15,25 @@ void main(List<String> arguments) {
     final inputArgs = arguments.length > 1 ? arguments.sublist(1) : null;
     searchWikipedia(inputArgs);
   }
+
   else {
     printUsage();
   }
 }
+
 void searchWikipedia(List<String>? arguments) {
   final String articleTitle;
+
+
   if (arguments == null || arguments.isEmpty) {
     print('Пожалуйста, введите название статьи.');
     articleTitle = stdin.readLineSync() ?? '';
   } else {
     articleTitle = arguments.join(' ');
   }
-  print('Текущее название статьи: $articleTitle');
+  print('Ищем статьи о "$articleTitle". Пожалуйста, подождите.');
+  print('Вот что нашлось:');
+  print('(Представьте, что это настоящая статья о "$articleTitle")');
 }
 void printUsage() {
   print(
