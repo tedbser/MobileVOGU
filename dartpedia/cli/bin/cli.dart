@@ -18,7 +18,10 @@ void main(List<String> arguments) async {
         errorLogger.warning(error.toString());
       }
     },
-  )..addCommand(HelpCommand());
+  )
+    ..addCommand(HelpCommand())
+    ..addCommand(SearchCommand(logger: errorLogger))
+    ..addCommand(GetArticleCommand(logger: errorLogger));
 
   app.run(arguments);
 }
