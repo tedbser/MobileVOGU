@@ -15,8 +15,12 @@ void main(List<String> arguments) {
   }
 }
 
+void searchWikipedia(List<String>? arguments) {
+  print('searchWikipedia получила аргументы: $arguments');
+}
+
 void printUsage() {
   print(
-    "Доступные команды: 'help', 'version', 'search <Название_Статьи>'"
+    "Доступные команды: 'help', 'version', 'search <Название статьи>'"
   );
 }
